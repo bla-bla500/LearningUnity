@@ -12,6 +12,10 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+/Learning Unity/My Project/Library
+/Learning Unity/Animal eat Animal/Library
+/Animal Eat food/Library
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
