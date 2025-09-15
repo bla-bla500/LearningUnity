@@ -1,3 +1,6 @@
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -6,6 +9,9 @@ public class PlayerControl : MonoBehaviour
     public float horizontalInput;
     public float speed = 23f;
     public float rangex = 10;
+
+    public GameObject projectilePrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +22,12 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        //Throw beef
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
 
         //Keeps Player Inbounds
         if (transform.position.x < rangex & transform.position.x > (rangex * -1))
