@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da948d5c00e1774baf6395f0e99ecc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CowMove
-  speed: 10
+  speed: 5
 --- !u!114 &3872739428444994758
 MonoBehaviour:
   m_ObjectHideFlags: 0
