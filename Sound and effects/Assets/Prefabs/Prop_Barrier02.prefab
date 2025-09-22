@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 6038397370149980004}
   - component: {fileID: 3958724906168173859}
   - component: {fileID: 2288413812269518211}
+  - component: {fileID: -929650227892602940}
   m_Layer: 0
   m_Name: Prop_Barrier02
   m_TagString: Untagged
@@ -157,3 +158,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveLeft
   speed: 5
+--- !u!114 &-929650227892602940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088309852510917986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f41903fa09cfc4f8018f9fbbc7844a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyOnExit

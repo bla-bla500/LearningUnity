@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7364568311131290956}
   - component: {fileID: 9075487053883338248}
   - component: {fileID: -3580020484281259483}
+  - component: {fileID: 984534545462930332}
   m_Layer: 0
   m_Name: Prop_StoneWall_01
   m_TagString: Untagged
@@ -68,6 +69,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveLeft
   speed: 5
+--- !u!114 &984534545462930332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220234176557996078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f41903fa09cfc4f8018f9fbbc7844a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyOnExit
 --- !u!1 &6824451414862875447
 GameObject:
   m_ObjectHideFlags: 0

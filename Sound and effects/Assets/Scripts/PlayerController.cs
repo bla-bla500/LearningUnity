@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool gameOver = false;
     public float force = 50;
     public GameObject ground;
     public Rigidbody playerRB;
@@ -21,7 +22,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject == ground)
         {
             onGround = true;
-            
+        }
+        else
+        {
+            gameOver = true;
+            Debug.Log("Game Over idiot");
         }
     }
     
