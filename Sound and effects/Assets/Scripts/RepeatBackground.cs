@@ -8,8 +8,8 @@ public class RepeatBackground : MonoBehaviour
     private PlayerController playerControllerScript;
     void Start()
     {
-        startPos = transform.position;
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        startPos = GameObject.Find("Background").transform.position;
     }
 
     void Update()
