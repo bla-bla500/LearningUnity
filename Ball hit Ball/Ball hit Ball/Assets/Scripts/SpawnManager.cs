@@ -20,11 +20,11 @@ public class SpawnManager : MonoBehaviour
      void Update()
      {
          
-         if (GameObject.Find("Enemy") == null && loopStarted == false)
+         if (GameObject.Find("Enemy") == null && GameObject.Find("Enemy(Clone)") == null && loopStarted == false)
          {
             loopStarted = true;
             int i = 0;
-            while (i < (roundCount))
+            while (i < (roundCount + 1))
             {
                 SpawnEnemy();
                 i = i + 1;
