@@ -785,6 +785,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55eb34331d541641847f739d45173e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerOnFall
+--- !u!1 &1716076236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5605545597444986683, guid: ebb940c035fb7e24fb812e12d6c305cd, type: 3}
+  m_PrefabInstance: {fileID: 4788753989069820282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1716076237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716076236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55eb34331d541641847f739d45173e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerOnFall
 --- !u!1 &1909461122
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   enemy: {fileID: 5605545597444986683, guid: ebb940c035fb7e24fb812e12d6c305cd, type: 3}
-  roundCount: 1
+  roundCount: 0
   ground: {fileID: 1403545341}
 --- !u!1001 &4788753989069820282
 PrefabInstance:
@@ -887,7 +904,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5605545597444986683, guid: ebb940c035fb7e24fb812e12d6c305cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1716076237}
   m_SourcePrefab: {fileID: 100100000, guid: ebb940c035fb7e24fb812e12d6c305cd, type: 3}
 --- !u!1001 &7305732181041295649
 PrefabInstance:

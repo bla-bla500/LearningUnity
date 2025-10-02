@@ -832,6 +832,7 @@ MonoBehaviour:
   enemy: {fileID: 5605545597444986683, guid: ebb940c035fb7e24fb812e12d6c305cd, type: 3}
   roundCount: 1
   ground: {fileID: 1403545341}
+  hasSpawned: 0
 --- !u!1001 &4788753989069820282
 PrefabInstance:
   m_ObjectHideFlags: 0
