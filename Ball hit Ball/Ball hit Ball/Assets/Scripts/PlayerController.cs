@@ -1,5 +1,7 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRB;
     public GameObject center;
     public bool gameIsOver = false;
+    public GameObject powerUpIndicator;
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -29,6 +32,33 @@ public class PlayerController : MonoBehaviour
             gameIsOver = true;
             Destroy(gameObject);
         }
+
+        powerUpIndicator.transform.position = transform.position + new Vector3(0,1,0);
+    }
+
+    public bool hasPowerup = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PowerUp"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+            powerUpIndicator.gameObject.SetActive(true);
+        }
+        else if (other.gameObject.CompareTag("Enemy") && hasPowerup)
+        {
+            Vector3 x = other.gameObject.GetComponent<Rigidbody>().linearVelocity;
+            other.gameObject.GetComponent<Rigidbody>().linearVelocity = (playerRB.linearVelocity * -1) * 5;
+            StartCoroutine(PowerupCountdown());
+        }
+    }
+
+    IEnumerator PowerupCountdown()
+    {
+        yield return new WaitForSeconds(10);
+        hasPowerup = false;
+        powerUpIndicator.gameObject.SetActive(false);
     }
 
     public bool Fell(GameObject thisObject)

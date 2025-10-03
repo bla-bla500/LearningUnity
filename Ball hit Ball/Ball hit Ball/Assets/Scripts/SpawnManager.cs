@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
@@ -16,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject ground;
     public bool hasSpawned = false;
     public bool loopStarted = false;
+    public GameObject powerUp;
 
      void Update()
      {
@@ -32,8 +34,19 @@ public class SpawnManager : MonoBehaviour
             roundCount = roundCount + 1;
             loopStarted = false;
         }
-     } 
+     }
 
+    private void LateUpdate()
+    {
+        StartCoroutine(PowerUpWait());
+        Instantiate(powerUp, randomPosition(), gameObject.transform.rotation);
+    }
+
+    IEnumerator PowerUpWait()
+    {
+        yield return new WaitForSeconds(20);
+        
+    }
 
     Vector3 randomPosition()
     {

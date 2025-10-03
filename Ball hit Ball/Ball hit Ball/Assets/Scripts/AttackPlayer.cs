@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -33,7 +34,7 @@ public class AttackPlayer : MonoBehaviour
             }
         }
     }
-
+    
     public bool Fell(GameObject thisObject)
     {
         if (thisObject.transform.position.y <= -10)
