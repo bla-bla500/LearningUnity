@@ -45,12 +45,11 @@ public class PlayerController : MonoBehaviour
             hasPowerup = true;
             Destroy(other.gameObject);
             powerUpIndicator.gameObject.SetActive(true);
+            StartCoroutine(PowerupCountdown());
         }
         else if (other.gameObject.CompareTag("Enemy") && hasPowerup)
         {
-            Vector3 x = other.gameObject.GetComponent<Rigidbody>().linearVelocity;
             other.gameObject.GetComponent<Rigidbody>().linearVelocity = (playerRB.linearVelocity * -1) * 5;
-            StartCoroutine(PowerupCountdown());
         }
     }
 

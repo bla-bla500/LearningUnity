@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
             loopStarted = false;
         }
      }
-
+    /*
     private void LateUpdate()
     {
         StartCoroutine(PowerUpWait());
@@ -47,7 +47,7 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(20);
         
     }
-
+    */
     Vector3 randomPosition()
     {
         hasSpawned = false;
