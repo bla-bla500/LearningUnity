@@ -12,8 +12,8 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
-/Learning Unity/My Project/Library
-/Learning Unity/Animal eat Animal/Library
+/Ball hit Ball/Ball hit Ball/Library/
+/pls don't crash/Library
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
