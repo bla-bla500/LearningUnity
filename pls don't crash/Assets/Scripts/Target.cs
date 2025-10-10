@@ -10,32 +10,39 @@ public class Target : MonoBehaviour
     public ParticleSystem particles;
     void Start()
     {
+            gameManagerScript = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
-        gameManagerScript = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            spinSpeed = Random.Range(-spinSpeed, spinSpeed);
 
-        spinSpeed = Random.Range(-spinSpeed,spinSpeed);
-
-        thisRB = GetComponent<Rigidbody>();
-        thisRB.AddForce(Vector3.up * Random.Range(12, 16), ForceMode.Impulse);
-        thisRB.AddTorque(spinSpeed, spinSpeed, spinSpeed, ForceMode.Impulse);
-        transform.position = new Vector3(Random.Range(-4,4),transform.position.y);
+            thisRB = GetComponent<Rigidbody>();
+            thisRB.AddForce(Vector3.up * Random.Range(12, 16), ForceMode.Impulse);
+            thisRB.AddTorque(spinSpeed, spinSpeed, spinSpeed, ForceMode.Impulse);
+            transform.position = new Vector3(Random.Range(-4, 4), transform.position.y);
     }
+
 
     private void OnMouseDown() 
     {
-        Instantiate(particles, gameObject.transform.position, gameObject.transform.rotation);
-        Destroy(gameObject);
-        gameManagerScript.UpdateScore(pointValue);
-        if (gameObject.CompareTag("Bad"))
+        if (gameManagerScript.gameOver == false)
         {
-            gameManagerScript.gameOver = true;
-            gameManagerScript.score = 0;
+            Instantiate(particles, gameObject.transform.position, gameObject.transform.rotation);
+            gameManagerScript.Kill(gameObject);
+            gameManagerScript.UpdateScore(pointValue);
+            if (gameObject.CompareTag("Bad"))
+            {
+                gameManagerScript.GameOver();
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        gameManagerScript.Kill(gameObject);
+        if (other.name == "Sensor" && CompareTag("Bad") == false)
+        {
+            gameManagerScript.GameOver();
+        }
     }
 
     
