@@ -18,12 +18,16 @@ public class SpawnManager : MonoBehaviour
     public bool hasSpawned = false;
     public bool loopStarted = false;
     public GameObject powerUp;
+    private bool isWaiting = false;
 
-     void Update()
-     {
-         
-         if (GameObject.Find("Enemy") == null && GameObject.Find("Enemy(Clone)") == null && loopStarted == false)
-         {
+    private void Start()
+    {
+        StartCoroutine(PowerUpWait());
+    }
+    public void SpawnWave()
+    {
+        if (loopStarted == false)
+        {
             loopStarted = true;
             int i = 0;
             while (i < (roundCount + 1))
@@ -34,18 +38,21 @@ public class SpawnManager : MonoBehaviour
             roundCount = roundCount + 1;
             loopStarted = false;
         }
-     }
-
-    private void LateUpdate()
-    {
-        StartCoroutine(PowerUpWait());
-        Instantiate(powerUp, randomPosition(), gameObject.transform.rotation);
+        
+    }
+    void Update()
+     {
+         if (GameObject.Find("Enemy") == null && GameObject.Find("Enemy(Clone)") == null)
+         {
+            SpawnWave();
+         }
     }
 
     IEnumerator PowerUpWait()
     {
         yield return new WaitForSeconds(20);
-        
+        Instantiate(powerUp, randomPosition(), gameObject.transform.rotation);
+        StartCoroutine(PowerUpWait());
     }
 
     Vector3 randomPosition()
